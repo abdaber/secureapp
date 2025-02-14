@@ -1,0 +1,18 @@
+<html lang="en">
+<head>
+    <title>Edit Profile</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h1>Edit Profile</h1>
+    <% if (error) { %>
+        <p class="error"><%= error %></p>
+    <% } %>
+    <form action="/editProfile" method="POST" enctype="multipart/form-data">
+        <input type="text" name="name" value="<%= user.name %>" required>
+        <input type="email" name="email" value="<%= user.email %>" required>
+        <input type="file" name="profilePicture" accept="image/*">
+        <button type="submit">Save Changes</button>
+    </form>
+</body>
+</html>
