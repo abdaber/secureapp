@@ -6,6 +6,7 @@ const multer = require('multer');
 const path = require('path');
 const User = require('./models/User');
 const authRoutes = require('./routes/auth');
+const bcrypt = require('bcryptjs');
 
 const app = express();
 
