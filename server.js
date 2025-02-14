@@ -46,7 +46,7 @@ app.get('/', (req, res) => {
 // Dashboard - Protected Route
 app.get('/dashboard', (req, res) => {
     if (!req.session.user) {
-        return res.redirect('/auth/login');
+        return res.redirect('/login');
     }
     res.render('dashboard', { user: req.session.user });
 });
@@ -54,14 +54,14 @@ app.get('/dashboard', (req, res) => {
 // Edit Profile
 app.get('/edit-profile', (req, res) => {
     if (!req.session.user) {
-        return res.redirect('/auth/login');
+        return res.redirect('/login');
     }
     res.render('editProfile', { user: req.session.user });
 });
 
 app.post('/edit-profile', upload.single('profilePicture'), async (req, res) => {
     if (!req.session.user) {
-        return res.redirect('/auth/login');
+        return res.redirect('/login');
     }
 
     try {
